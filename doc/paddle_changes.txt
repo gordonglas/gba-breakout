@@ -1,0 +1,2 @@
+GeneratePaddleMap() must be modified to take a width of the paddle
+paddle_map[35] must be made larger for make room for largest paddle size

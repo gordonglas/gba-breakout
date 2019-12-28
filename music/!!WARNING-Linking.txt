@@ -1,0 +1,13 @@
+1. ARM SDT compiler
+
+Player main code should be placed in Internal RAM (0x03000000). This is done by changing
+code ro segment to data rw segment for player code. If you link player with your project 
+make sure that data rw segment is set to 0x03000000. I have not yet found solution if
+project data segment is set to 0x02000000. (Please send me an email if you know how to
+set different rw segment for different .o files)
+
+2. GCC compiler
+
+All player code is placed in .data segment and aslo should be placed in Internal RAM. But
+in GCC you can easily set .data segment to 0x03000000, while you are using different data
+segment for your variables. Simply make sure that player code is in Internal RAM.

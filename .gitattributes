@@ -1,0 +1,32 @@
+# Set default behavior to automatically normalize line endings.
+*           text=auto
+
+# These files are text and should be normalized (Convert crlf => lf)
+*.h         text
+*.c         text
+*.cpp       text
+*.txt       text
+*.MD        text
+lnkscript   text
+crt0.S      text
+
+
+# These files are binary and should be left untouched
+*.zip       binary
+*.doc       binary
+*.docx      binary
+*.pcx       binary
+*.bmp       binary
+*.psd       binary
+*.psp       binary
+*.a         binary
+*.mod       binary
+*.exe       binary
+*.o         binary
+*.pk        binary
+*.pcm       binary
+*.wav       binary
+*.gba       binary
+*.gif       binary
+*.png       binary
+*.pdn       binary

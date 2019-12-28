@@ -1,0 +1,18 @@
+nightshift_logo
+*****
+redgrey = 124,108,108
+navyblue = 2,36,36
+yellowbrown = 196,172,93
+
+nightshift_logo_left  = 37,45
+nightshift_logo_mid   = 101,45
+nightshift_logo_right = 165,45
+
+
+titlescreen logo
+*****
+scroll titlescreen logos to these positions:
+5,5
+69,5
+133,5
+197,5

@@ -1,0 +1,58 @@
+Uses GBA Music Wave SDK by Sergej Kravcenko, which supports playback of simple 4 channel mod files. Found a newer version via the Wayback Machine here:
+https://web.archive.org/web/20021128223226/http://www.codewaves.com/files/GBA_MusicWave12.zip
+...but this newer version doesn't work with with the code yet, so haven't upgraded yet.
+
+
+#### How to fix "X supports interworking but Y does not" warning messages?
+
+This has several causes. Using objcopy to convert binary to object format is one source. Use the following on the file that has problems. This will flip the mthumb-interwork bit in the file to remove this warning:
+
+    interflip -mthumb-interwork file.o
+    
+
+
+DONE
+-redo death animation
+-use alpha blend to fade blocks in at the start of each level
+-fix capsule collision with paddle
+-delete all capsule sprites when clearing a level, and at death.
+-try to make capsule code faster (or sync the display better)
+-fix multiple capsule bug (happens when set to more than 1)
+-fix logo scroll code to use a fixed float factor and not a timer
+-fix wall vs paddle collision, now that the paddle h-vel factor was changed
+-add actual powerup functionality
+   -Multiball
+   -slow/fast ball - using trig
+   -grow / shink powerups
+
+MAYBE
+-change paddle and ball to use smaller size images (images... not sprites)
+-use select button to cycle through songs
+-use look-up table for TextToBG ascii conversion
+-credits screen?
+-get rid of white flicker between screen transitions (if possible without doing fades)
+
+TODO
+-add actual powerup functionality
+   -cannon powerup
+      -collisions of bullets vs blocks
+      -destroy all bullets when die, and when they go offscreen
+      -make cannons alpha blend, then disapear when die
+-fix timing / countdown issue
+-get sound working
+-set correct volumes for each sound
+-add more levels
+-add more backgrounds for levels
+-add more music
+-set correct volumes for each mod file
+-speeds may need to be adjusted for hardware vs emu.
+
+
+/*************************************************************************************/
+gba Background Memory layout
+------------------------------
+CharBaseBlocks begin at 0x6000000 = contain 8 blocks at 2048 bytes each = 16K or 16384 bytes
+each of these blocks are also shared and correspond to a ScreenBaseBlock
+
+Max memory location is 0x6000000 + 65535 bytes (64K total background memory)
+/*************************************************************************************/
