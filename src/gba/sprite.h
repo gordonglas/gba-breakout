@@ -51,23 +51,23 @@
 // sprite info object
 typedef struct tagOAMEntry
 {
-        u16 attribute0;
-        u16 attribute1;
-        u16 attribute2;
-        u16 attribute3;	// unused
+    u16 attribute0;
+    u16 attribute1;
+    u16 attribute2;
+    u16 attribute3;	// unused
 } OAMEntry, *pOAMEntry;
 
 // sprite rot/scaling object
 typedef struct tagRotData
 {
-        u16 filler1[3];	// unused
-        u16 pa;
-        u16 filler2[3];	// unused
-        u16 pb; 
-        u16 filler3[3];	// unused
-        u16 pc; 
-        u16 filler4[3];	// unused
-        u16 pd;
+    u16 filler1[3];	// unused
+    u16 pa;
+    u16 filler2[3];	// unused
+    u16 pb; 
+    u16 filler3[3];	// unused
+    u16 pc; 
+    u16 filler4[3];	// unused
+    u16 pd;
 } RotData, *pRotData;
 
 // our own attributes

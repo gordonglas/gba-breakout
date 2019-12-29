@@ -1,14 +1,13 @@
 /*
   by Gordon Glas - Sept 18, 2002
   https://overworldsoft.com
+  (Formerly Illusive Studios)
 */
 
 #include <stdio.h>
 #include <string.h>
 
 #include "gba/gba.h"
-#include "gba/screenmodes.h"
-#include "gba/keypad.h"
 #include "gba/sprite.h"
 #include "gba/background.h"
 #include "gba/interupts.h"
@@ -264,7 +263,7 @@ int main()
 
 	// set videomode 0, enable backgrounds 0, 1, and 2, enable sprites,
 	// and enable 1-dimensional sprite memory
-	SetMode( SCREENMODE0 | BG0ENABLE | BG1ENABLE | BG2ENABLE | OBJENABLE | OBJMAP1D );
+	SetMode( MODE0 | BG0_ENABLE | BG1_ENABLE | BG2_ENABLE | OBJ_ENABLE | OBJ_MAP_1D );
 
 	//init_sfx_system();
 

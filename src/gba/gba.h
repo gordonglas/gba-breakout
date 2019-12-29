@@ -1,7 +1,3 @@
-///////////////////////////////////////////////////////////////////////////////
-// gba.h
-///////////////////////////////////////////////////////////////////////////////
-
 #ifndef GBA_H
 #define GBA_H
 
@@ -309,27 +305,29 @@ enum
 };
 */
 // display (REG_DISPCNT) defines
-#define BG0_ENABLE		 0x100
-#define BG1_ENABLE		 0x200
-#define BG2_ENABLE		 0x400
-#define BG3_ENABLE		 0x800
-#define OBJ_ENABLE		 0x1000
-#define WIN0_ENABLE		 0x2000
-#define WIN1_ENABLE		 0x4000
-#define WINOBJ_ENABLE	 0x8000
-#define BACK_BUFFER_FLAG 0x10
-#define H_BLANK_OAM      0x20
-#define OBJ_MAP_2D       0x0
-#define OBJ_MAP_1D       0x40
-#define FORCE_BLANK      0x80
+#define BG0_ENABLE		 0x100      //Enable background 0
+#define BG1_ENABLE		 0x200      //Enable background 1
+#define BG2_ENABLE		 0x400      //Enable background 2
+#define BG3_ENABLE		 0x800      //Enable background 3
+#define OBJ_ENABLE		 0x1000     //Enable sprites
+#define WIN0_ENABLE		 0x2000     //Enable window 0
+#define WIN1_ENABLE		 0x4000     //Enable window 1
+#define WINOBJ_ENABLE	 0x8000     //Enable object window
+#define BACK_BUFFER_FLAG 0x10       //Determine backbuffer
+#define H_BLANK_OAM      0x20       //Update OAM during HBlank?
+#define OBJ_MAP_2D       0x0        //2D object (sprite) mapping
+#define OBJ_MAP_1D       0x40       //1D object (sprite) mapping
+#define FORCE_BLANK      0x80       //Force a blank
 
 // video modes
-#define MODE0			0x0
-#define MODE1			0x1
-#define MODE2			0x2
-#define MODE3			0x3
-#define MODE4			0x4
-#define MODE5			0x5
+#define MODE0			0x0         //Enable screen mode 0
+#define MODE1			0x1         //Enable screen mode 1
+#define MODE2			0x2         //Enable screen mode 2
+#define MODE3			0x3         //Enable screen mode 3
+#define MODE4			0x4         //Enable screen mode 4
+#define MODE5			0x5         //Enable screen mode 5
+
+#define SetMode(mode)  (REG_DISPCNT = mode)
 
 // input defines
 #define KEY_MASK   0x3FF
@@ -343,6 +341,8 @@ enum
 #define KEY_DOWN   0x080
 #define KEY_R      0x100
 #define KEY_L      0x200
+
+#define KEYDOWN(k)		( ! ((REG_KEYS) & (k)) )
 
 // some structs
 typedef void (*fp)(void);
@@ -366,6 +366,5 @@ typedef void (*fp)(void);
 // helper macros
 #define GBA_RGB_15(r, g, b)        ((r) + (g<<5) + (b<<10))
 #define SCANLINE_COUNTER           (*(volatile u16*)0x4000006)
-#define INPUT                      (KEY_MASK & (~REG_KEYS))
 
 #endif

@@ -1,8 +1,4 @@
-/*
-	Background memory functions
-	©2003 Illusive Studios
-	www.illusivestudios.com
-*/
+// Background memory functions
 
 #include "background.h"
 
