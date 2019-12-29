@@ -344,9 +344,6 @@ enum
 
 #define KEYDOWN(k)		( ! ((REG_KEYS) & (k)) )
 
-// some structs
-typedef void (*fp)(void);
-
 // fx processor (REG_BLDMOD) defines
 #define TARGET1_BG0			0x1
 #define TARGET1_BG1			0x2
