@@ -1,5 +1,5 @@
 /*
-  by Gordon Glas - Sept 18, 2002
+  by Gordon Glas
   https://overworldsoft.com
   (Formerly Illusive Studios)
 */
@@ -18,7 +18,6 @@
 #include "sound/modfiles.h"
 
 //#include "gba/sfx.h"
-//#include "gba/sfx.c"
 
 // game objects & look-up tables
 #include "object/cloud.h"

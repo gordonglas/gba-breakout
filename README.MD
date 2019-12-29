@@ -11,3 +11,12 @@ After cloning the repo, unzip all files within \bin\devkitadv\ so they end up in
 Run \src\make.bat to build main.gba
 
 Run main.gba in your emulator.
+
+
+### Tools:
+
+To get "GBA Map Editor Beta 4" working on newer versions of Windows:
+
+Download comdlg32.ocx and copy it to C:\Windows\SysWOW64\ (for 64 bit Windows).
+
+Run from elevated cmd: C:\Windows\SysWOW64\regsvr32 C:\Windows\SysWOW64\comdlg32.ocx
