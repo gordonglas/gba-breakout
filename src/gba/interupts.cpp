@@ -47,7 +47,7 @@ extern int height;     //height of the player
 //all others you will have to do on your own.
 void EnableInterupts(u16 interupts)
 {
-    REG_IME = 0;  //probably not necessary but not a good idea to change interupt registers when an interupt is ocuring
+    REG_IME = 0;  //probably not necessary but not a good idea to change interupt registers when an interupt is occuring
 
     
     if(interupts | INT_VBLANK)

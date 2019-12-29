@@ -10,6 +10,8 @@ s16 nSpriteCreationIndex = 0;
 u16 nCurrentMaxCharWidth = 0;
 u16 nCurrentMaxCharNum = 0;
 
+static s16 FindOpenSpriteIndex(void);
+
 /* SpriteSetPalette - sets the sprite palette
 Param
   pPaletteData - palette data
@@ -182,33 +184,6 @@ void DeleteSpriteRange(u8 nFirstIndex, u8 nLastIndex)
 	nSpriteCreationIndex = nFirstIndex;
 }
 
-/* FindOpenSpriteIndex - finds an unused sprite index in the sprite array
-Return
-  -1    - error: no open index found!
-  >= 0  - unused sprite index
-*/
-s16 FindOpenSpriteIndex(void)
-{
-	if(nSpriteCreationIndex == -1)
-		return -1;
-
-	if(nSpriteCreationIndex == 128)
-		nSpriteCreationIndex = 0;
-
-	do
-	{
-		// if state is null, it is unused
-		if(spritesEx[nSpriteCreationIndex].nState == SPRITE_STATE_NULL)
-			return nSpriteCreationIndex;
-
-		nSpriteCreationIndex++;
-	}
-	while (nSpriteCreationIndex < 128);
-
-	nSpriteCreationIndex = -1;
-	return -1;
-}
-
 void InitSpriteMemory(void)
 {
 	nCurrentMaxCharWidth = 0;
@@ -265,4 +240,31 @@ void SpriteSetAlphaMode(u8 nSpriteIndex, u16 nAlphaMode)
 	//clear the old alpha mode (bits 11 and 12)
 	sprites[nSpriteIndex].attribute0 = sprites[nSpriteIndex].attribute0 & 0xF3FF;
 	sprites[nSpriteIndex].attribute0 = sprites[nSpriteIndex].attribute0 | nAlphaMode;
+}
+
+/* FindOpenSpriteIndex - finds an unused sprite index in the sprite array
+Return
+  -1    - error: no open index found!
+  >= 0  - unused sprite index
+*/
+static s16 FindOpenSpriteIndex(void)
+{
+	if(nSpriteCreationIndex == -1)
+		return -1;
+
+	if(nSpriteCreationIndex == 128)
+		nSpriteCreationIndex = 0;
+
+	do
+	{
+		// if state is null, it is unused
+		if(spritesEx[nSpriteCreationIndex].nState == SPRITE_STATE_NULL)
+			return nSpriteCreationIndex;
+
+		nSpriteCreationIndex++;
+	}
+	while (nSpriteCreationIndex < 128);
+
+	nSpriteCreationIndex = -1;
+	return -1;
 }

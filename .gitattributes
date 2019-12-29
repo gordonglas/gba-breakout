@@ -13,7 +13,6 @@
 lnkscript   text
 crt0.S      text
 
-
 # These files are binary and should be left untouched
 *.zip       binary
 *.doc       binary

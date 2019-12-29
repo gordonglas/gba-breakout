@@ -83,7 +83,6 @@ extern OAMEntry sprites[128];
 extern SpriteEx spritesEx[128];
 extern pRotData rotData;
 
-// "public" functions
 void SpriteSetPalette(const u16* pPaletteData);
 u16 SpriteLoadImage(const u16* pImageData, u16 nWidth, u16 nHeight, u16 nColors);
 s16 SpriteCreate(u16 nCharMemPos, s16 nPosX, s16 nPosY, FIXED ffixVelX, FIXED ffixVelY,
@@ -95,9 +94,6 @@ void DeleteSpriteRange(u8 nFirstIndex, u8 nLastIndex);
 void SpriteSetPos(u8 nSpriteIndex, s16 nPosX, s16 nPosY);
 void SpriteSetAlphaMode(u8 nSpriteIndex, u16 nAlphaMode);
 void InitSpriteMemory(void);
-
-// "private" functions
-s16 FindOpenSpriteIndex(void);
 
 //__attribute__(( long_call )) void CopyOAM(void); // Copy our sprite array to OAM
 //void MoveSprite(OAMEntry* sp, int x, int y);

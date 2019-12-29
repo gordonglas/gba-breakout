@@ -1,8 +1,4 @@
-/*
-	Background memory functions
-	©2003 Illusive Studios
-	www.illusivestudios.com
-*/
+// Background memory functions
 
 #ifndef __BACKGROUND_MEM_H__
 #define __BACKGROUND_MEM_H__
