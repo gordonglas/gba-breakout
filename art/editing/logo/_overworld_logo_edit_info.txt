@@ -1,0 +1,29 @@
+-paint.net
+-install BoltBait's plugin pack
+-render white text
+  -Font: Impact
+  -Size: 108
+-select Magic Wand tool -> shift-left-click outside of text
+-Effects menu -> Object -> Outline Object
+  -Outline Object settings:
+    -Outline Width 7
+    -RGBA: 67, 81, 127, 128
+
+Section positions:
+  upper left of [0][0] = 35, 39
+                 1  0  = 99, 39
+                 2  0  = 163, 39
+                 0  1  = 35, 76
+                 1  1  = 99, 76
+                 2  1  = 163, 76
+
+Note that when creating these smaller images from a single one,
+they must all share the same 256 color palette.
+To do this in paint.net, you load the full pcx file,
+select the inner image portion using the rectangle selector,
+then CROP it -> save as -> in pcx save dialog,
+check "Use original palette".
+DO NOT copy/paste to a new image,
+as that will lose the palette info.
+
+Use dovoto's pcx2sprite.exe to generate the c header file.

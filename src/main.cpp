@@ -1,7 +1,6 @@
 /*
   by Gordon Glas
   https://overworldsoft.com
-  (Formerly Illusive Studios)
 */
 
 #include <stdio.h>
@@ -28,12 +27,12 @@
 #include "object/capsule.h"
 
 // sprite and palette data
-#include "art/IllusiveLogo_0_0.h"
-#include "art/IllusiveLogo_1_0.h"
-#include "art/IllusiveLogo_2_0.h"
-#include "art/IllusiveLogo_0_1.h"
-#include "art/IllusiveLogo_1_1.h"
-#include "art/IllusiveLogo_2_1.h"
+#include "art/OverworldSoftLogo_0_0.h"
+#include "art/OverworldSoftLogo_1_0.h"
+#include "art/OverworldSoftLogo_2_0.h"
+#include "art/OverworldSoftLogo_0_1.h"
+#include "art/OverworldSoftLogo_1_1.h"
+#include "art/OverworldSoftLogo_2_1.h"
 #include "art/blockout_logo1.h"
 #include "art/blockout_logo2.h"
 #include "art/blockout_logo3.h"
@@ -114,7 +113,7 @@ u32 g_waitTicks;
 u32 g_timeRet;
 
 // logo sprite indexes
-s16 g_nIllusiveLogoSpriteIndexes[6];
+s16 g_nCompanyLogoSpriteIndexes[6];
 s16 g_nMenuLogoSpriteIndexes[4];
 
 // menu logo x position vars (y is hardcoded as 5)
@@ -340,17 +339,17 @@ void LogoCreate()
 	// set bg pal to title screen background tiles' pal
 	BGSetPalette(game_bg_tilesPalette);
 
-	// copy illusive logo palette into sprite palette mem
-	SpriteSetPalette(IllusiveStudios_logo_pal);
+	// copy company logo palette into sprite palette mem
+	SpriteSetPalette(OverworldSoft_logo_pal);
 
-	// load illusive logo sprite images
+	// load company logo sprite images
 	u16 nCharNums[6];
-	nCharNums[0] = SpriteLoadImage(IllusiveLogo_0_0Data, 64, 64, 256);
-	nCharNums[1] = SpriteLoadImage(IllusiveLogo_1_0Data, 64, 64, 256);
-	nCharNums[2] = SpriteLoadImage(IllusiveLogo_2_0Data, 64, 64, 256);
-	nCharNums[3] = SpriteLoadImage(IllusiveLogo_0_1Data, 64, 64, 256);
-	nCharNums[4] = SpriteLoadImage(IllusiveLogo_1_1Data, 64, 64, 256);
-	nCharNums[5] = SpriteLoadImage(IllusiveLogo_2_1Data, 64, 64, 256);
+	nCharNums[0] = SpriteLoadImage(OverworldSoftLogo_0_0Data, 64, 64, 256);
+	nCharNums[1] = SpriteLoadImage(OverworldSoftLogo_1_0Data, 64, 64, 256);
+	nCharNums[2] = SpriteLoadImage(OverworldSoftLogo_2_0Data, 64, 64, 256);
+	nCharNums[3] = SpriteLoadImage(OverworldSoftLogo_0_1Data, 64, 64, 256);
+	nCharNums[4] = SpriteLoadImage(OverworldSoftLogo_1_1Data, 64, 64, 256);
+	nCharNums[5] = SpriteLoadImage(OverworldSoftLogo_2_1Data, 64, 64, 256);
 
 	// at this point, I've used about 24576 bytes = aproximately 24k out of gba's 32k total.
 	// yikes... kinda small, huh? =)
@@ -358,12 +357,12 @@ void LogoCreate()
 	// is separate from sprite memory. Not to mention sprites will be much smaller during actual gameplay.
 
 	// create sprites that reference the images by character number
-	g_nIllusiveLogoSpriteIndexes[0] = SpriteCreate(nCharNums[0], 36,  41, 0, 0, 1, SPRITE_SIZE_64, SPRITE_SHAPE_SQUARE, SPRITE_COLOR_256);
-	g_nIllusiveLogoSpriteIndexes[1] = SpriteCreate(nCharNums[1], 100, 41, 0, 0, 1, SPRITE_SIZE_64, SPRITE_SHAPE_SQUARE, SPRITE_COLOR_256);
-	g_nIllusiveLogoSpriteIndexes[2] = SpriteCreate(nCharNums[2], 164, 41, 0, 0, 1, SPRITE_SIZE_64, SPRITE_SHAPE_SQUARE, SPRITE_COLOR_256);
-	g_nIllusiveLogoSpriteIndexes[3] = SpriteCreate(nCharNums[3], 36,  76, 0, 0, 1, SPRITE_SIZE_64, SPRITE_SHAPE_SQUARE, SPRITE_COLOR_256);
-	g_nIllusiveLogoSpriteIndexes[4] = SpriteCreate(nCharNums[4], 100, 76, 0, 0, 1, SPRITE_SIZE_64, SPRITE_SHAPE_SQUARE, SPRITE_COLOR_256);
-	g_nIllusiveLogoSpriteIndexes[5] = SpriteCreate(nCharNums[5], 164, 76, 0, 0, 1, SPRITE_SIZE_64, SPRITE_SHAPE_SQUARE, SPRITE_COLOR_256);
+	g_nCompanyLogoSpriteIndexes[0] = SpriteCreate(nCharNums[0], 35,  39, 0, 0, 1, SPRITE_SIZE_64, SPRITE_SHAPE_SQUARE, SPRITE_COLOR_256);
+	g_nCompanyLogoSpriteIndexes[1] = SpriteCreate(nCharNums[1], 99, 39, 0, 0, 1, SPRITE_SIZE_64, SPRITE_SHAPE_SQUARE, SPRITE_COLOR_256);
+	g_nCompanyLogoSpriteIndexes[2] = SpriteCreate(nCharNums[2], 163, 39, 0, 0, 1, SPRITE_SIZE_64, SPRITE_SHAPE_SQUARE, SPRITE_COLOR_256);
+	g_nCompanyLogoSpriteIndexes[3] = SpriteCreate(nCharNums[3], 36,  76, 0, 0, 1, SPRITE_SIZE_64, SPRITE_SHAPE_SQUARE, SPRITE_COLOR_256);
+	g_nCompanyLogoSpriteIndexes[4] = SpriteCreate(nCharNums[4], 99, 76, 0, 0, 1, SPRITE_SIZE_64, SPRITE_SHAPE_SQUARE, SPRITE_COLOR_256);
+	g_nCompanyLogoSpriteIndexes[5] = SpriteCreate(nCharNums[5], 163, 76, 0, 0, 1, SPRITE_SIZE_64, SPRITE_SHAPE_SQUARE, SPRITE_COLOR_256);
 
 	// set up transparency
 
@@ -447,7 +446,7 @@ void LogoDelete()
 	// zero out logo sprites
 	for(s16 i = 5; i > -1; i--)
 	{
-		DeleteSprite(g_nIllusiveLogoSpriteIndexes[i]);
+		DeleteSprite(g_nCompanyLogoSpriteIndexes[i]);
 	}
 
 	// disable timers
