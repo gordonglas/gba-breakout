@@ -1,6 +1,6 @@
 # Blockout (Breakout clone) for GameBoy Advance
 
-Note this is an early version that still has some debugging enabled (on-screen output) and is unfinished and buggy. I wrote this code in 2002'ish and just recently found it on a burned DVD in 2019. If I have time, I'll try to clean it up, fix bugs, add more levels and add more info here.
+Note this is an early version that still has some debugging enabled (on-screen output) and is unfinished. I wrote this code in 2002 and just recently found it on a burned DVD at the end of 2019. I've started to clean things up a bit, but still need to primarily fix how the shooting works and add more levels.
 
 ### How to build:
 
